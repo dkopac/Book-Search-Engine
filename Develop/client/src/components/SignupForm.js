@@ -14,7 +14,6 @@ const SignupForm = () => {
   // use mutation
   const [addUser, { error }] = useMutation(ADD_USER);
   
-  console.log(error);
 
   // update state based on form input changes
   const handleInputChange = (event) => {
@@ -43,7 +42,6 @@ const SignupForm = () => {
       // console.log(data);
       Auth.login(data.addUser.token);
     } catch (err) {
-      console.error(err);
       setShowAlert(true);
     }
     setUserFormData({
